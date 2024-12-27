@@ -94,11 +94,6 @@
     <!-- 游戏结束提示（默认隐藏） -->
     <div class="game-over" id="gameOver" style="display: none;">GAME OVER</div>
     <!-- 游戏胜利提示（默认隐藏） -->
-    <div class="game-win" id="gameWin" style="display: none;">
-      <!-- 如果需要展示一张胜利图片，可在这里添加<img>，例如： -->
-      <img id="victoryImg" src="images/victory.png" alt="Victory" />
-      <p class="win-text">YOU WIN MY HEART</p>
-    </div>
   </div>
 
   <!-- 音效：子弹发射 & 击中 -->
@@ -402,11 +397,19 @@
 
     // 游戏胜利画面
     function drawGameWin() {
-      // 隐藏游戏容器
+      // 1. 隐藏游戏主容器（里面有 canvas、计分板等）
       const gameContainer = document.querySelector('.game-container');
-      gameContainer.style.display = 'none';
+      if (gameContainer) {
+        gameContainer.style.display = 'none';
+      }
     
-      // 将body背景换成victory.png
+      // 2. 隐藏标题（若有）
+      const pageHeader = document.querySelector('h1');
+      if (pageHeader) {
+        pageHeader.style.display = 'none';
+      }
+    
+      // 3. 将整个 body 的背景替换为 victory.png
       document.body.style.background = 'url("images/victory.png") no-repeat center center';
       document.body.style.backgroundSize = 'cover';
     }
