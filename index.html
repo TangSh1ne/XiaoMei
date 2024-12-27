@@ -83,7 +83,7 @@
 </head>
 <body>
 
-  <h1>一百分心动</h1>
+  <h1>心动的一百个瞬间</h1>
 
   <!-- 游戏容器 -->
   <div class="game-container">
@@ -95,9 +95,9 @@
     <div class="game-over" id="gameOver" style="display: none;">GAME OVER</div>
     <!-- 游戏胜利提示（默认隐藏） -->
     <div class="game-win" id="gameWin" style="display: none;">
-      <div>YOU WIN!</div>
       <!-- 如果需要展示一张胜利图片，可在这里添加<img>，例如： -->
       <img id="victoryImg" src="images/victory.png" alt="Victory" />
+      <p class="win-text">YOU WIN MY HEART</p>
     </div>
   </div>
 
@@ -403,7 +403,7 @@
     // 游戏胜利画面
     function drawGameWin() {
       const gameWinDiv = document.getElementById('gameWin');
-      gameWinDiv.style.display = 'block';
+      gameWinDiv.style.display = 'flex';
       
 
     }
