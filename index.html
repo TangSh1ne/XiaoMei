@@ -402,10 +402,13 @@
 
     // 游戏胜利画面
     function drawGameWin() {
-      const gameWinDiv = document.getElementById('gameWin');
-      gameWinDiv.style.display = 'flex';
-      
-
+      // 隐藏游戏容器
+      const gameContainer = document.querySelector('.game-container');
+      gameContainer.style.display = 'none';
+    
+      // 将body背景换成victory.png
+      document.body.style.background = 'url("images/victory.png") no-repeat center center';
+      document.body.style.backgroundSize = 'cover';
     }
 
     /*************************************************
