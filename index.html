@@ -92,7 +92,12 @@
     <!-- 画布 -->
     <canvas id="gameCanvas"></canvas>
     <!-- 游戏结束提示（默认隐藏） -->
-    <div class="game-over" id="gameOver" style="display: none;">GAME OVER</div>
+    <div class="game-over" id="gameOver" style="display: none;">
+      GAME OVER
+      <br />
+      <button id="retryBtn">重新挑战</button>
+    </div>
+    
     <!-- 游戏胜利提示（默认隐藏） -->
   </div>
 
@@ -461,6 +466,10 @@
         a.y > b.y + b.height
       );
     }
+    const retryBtn = document.getElementById('retryBtn');
+    retryBtn.addEventListener('click', () => {
+      location.reload(); // 直接刷新页面
+    });
 
     // 启动游戏
     init();
